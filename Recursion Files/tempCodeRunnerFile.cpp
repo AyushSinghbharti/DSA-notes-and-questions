@@ -1,14 +1,19 @@
-cout << "Merge Value till last OP" << endl;
-    // for(int i = 0; i < 9; i++)
-    //     cout << arr[i] << " ";
-    // cout << "\n" << endl;
+#include<iostream>
+#include<vector>
+using namespace std;
 
-    // while(index1 < len1)
-    //     arr[mainIndex++] = first[index1++];
-    // while(index2 < len2)
-    //     arr[mainIndex++] = second[index2++];
+int main(int argc, char const *argv[])
+{
+    vector<vector<int>> test1;
+    int count;
 
-    // cout << "Merge Value after last OP" << endl;
-    // for(int i = 0; i < 9; i++)
-    //     cout << arr[i] << " ";
-    // cout << "\n" << endl;
+    test1.push_back(5, 6, 7, 9);
+    cout << "size of 0 " << sizeof(test1[0]) << endl;
+    cout << "Numbers of element " << test1.size() << endl;
+    cout << "size of all " << sizeof(test1) << endl;
+    for(int i=0; i<test1.size(); i++){
+        count += sizeof(test1[i]);
+        cout << "Size of individual " << i << " " << int(sizeof(test1[i])) << " " << count << endl;
+    }
+    return 0;
+}
