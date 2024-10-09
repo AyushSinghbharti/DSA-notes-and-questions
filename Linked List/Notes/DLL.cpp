@@ -201,9 +201,31 @@ Node *insertIndex(Node *head, int index, int val)
         }
         temp = temp->next;
     }
-    if(cnt+1 == index) return insertTail(head, val);
+    if (cnt + 1 == index)
+        return insertTail(head, val);
     cout << "invalid index: " << endl;
     return head;
+}
+
+Node *reverseDLL(Node *head)
+{
+    Node *temp = head;
+    Node *back = NULL;
+    while (temp)
+    {
+        back = temp->prev;
+        if (back)
+        {
+            cout << back->data << endl;
+        }else{
+            cout << "--out" << endl;
+        }
+        temp->prev = temp->next;
+        temp->next = back;
+
+        temp = temp->prev;
+    }
+    return back->prev;
 }
 
 int main()
@@ -226,9 +248,8 @@ int main()
     //     head = insertIndex(head, i, 20);
     //     printDll(head);
     // }
-    
+    head = reverseDLL(head);
     printDll(head);
-    printFromBack(head);
-
+    // printFromBack(head);
     return 0;
 }
